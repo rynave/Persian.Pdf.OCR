@@ -8,8 +8,8 @@ from tqdm import tqdm
 # مسیر نصب Tesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-PDF_FILE = "9.pdf"
-OUTPUT_FILE = "9.txt"
+PDF_FILE = "input.pdf"
+OUTPUT_FILE = "output.txt"
 
 doc = fitz.open(PDF_FILE)
 
@@ -28,17 +28,9 @@ for page_num in tqdm(range(len(doc)), desc="OCR"):
     )
 
     img = np.array(img)
-
-    # خاکستری
     gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-
-    # افزایش کنتراست
     gray = cv2.equalizeHist(gray)
-
-    # حذف نویز
     gray = cv2.GaussianBlur(gray, (3,3), 0)
-
-    # سیاه سفید
     gray = cv2.threshold(
         gray,
         0,
