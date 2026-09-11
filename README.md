@@ -48,8 +48,8 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 project/
 │
 ├── app.py
-├── 9.pdf
-└── 9.txt
+├── input.pdf
+└── output.txt
 ```
 
 ---
@@ -59,13 +59,13 @@ project/
 فایل PDF ورودی را مشخص کنید:
 
 ```python
-PDF_FILE = "9.pdf"
+PDF_FILE = "input.pdf"
 ```
 
 نام فایل خروجی را تعیین کنید:
 
 ```python
-OUTPUT_FILE = "9.txt"
+OUTPUT_FILE = "output.txt"
 ```
 
 سپس اجرا کنید:
